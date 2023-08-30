@@ -122,6 +122,10 @@
             const instance = event.detail.plyr;
             console.log('Stop others players');
             players.forEach(function(p){ if(p != instance) p.stop()});
+            gtag('event', 'listening', {
+              'app_name': '{{ .Site.Title }}',
+              'screen_name': '{{ .Params.title }}'
+            });
           })
         });
     })();
